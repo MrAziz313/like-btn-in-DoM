@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .like-icon {
+    color: grey;
+    transition: color 0.3s;
+}
+
+.like-icon.liked {
+    color: blue;
+}
+
+    </style>
+</head>
+<body>
+    <div class="like-section">
+        <i id="likeIcon" class="like-icon" style="font-size: 24px; cursor: pointer;">👍</i>
+        <span id="likeCount">0</span> Likes
+    </div>
+    
+
+
+    <script>
+        let likeCount = 0;
+const likeIcon = document.getElementById('likeIcon');
+const likeCountDisplay = document.getElementById('likeCount');
+
+likeIcon.addEventListener('click', () => {
+    if (likeIcon.classList.contains('liked')) {
+        likeCount-1;
+        likeIcon.classList.remove('liked');
+    } else {
+        likeCount++;
+        likeIcon.classList.add('liked');
+        likeIcon.style.backgroundColor='blue'
+    }
+    likeCountDisplay.textContent = likeCount;
+});
+
+    </script>
+</body>
+</html>
